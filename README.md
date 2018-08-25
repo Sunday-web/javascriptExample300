@@ -41,3 +41,19 @@ javascript网页特效经典300例 书中的案例
     }
 </script>
 ```
+### 实例003  动态关闭页面
+
+【实例描述】
+> 网页有时候不需要等待用户的操作而自动关闭。例如，子窗口的作用已经结束，或者本窗口已经过期需要关闭。使用JavaScript可以很好地实现这个效果。
+
+【实现代码】
+```html
+<a onclick="closeWin()" class="button is-info">关闭窗口</a>
+```
+```javascript
+<script>
+ function closeWin() {
+   window.close();
+  }
+</script>
+```
