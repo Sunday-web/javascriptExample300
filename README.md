@@ -6,9 +6,6 @@ javascript网页特效经典300例 书中的案例
 
 本人使用了[bulma](https://github.com/jgthms/bulma "bulma")简洁轻便的css框架 美化了样式。
 
-# 目录
-## 第一章 网页特效
-实例001  自动刷新页面
 
 ## 第一章 网页特效
 ### 实例001  自动刷新页面
