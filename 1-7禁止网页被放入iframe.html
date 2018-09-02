@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>修改标题</title>
+  <title>禁止网页被放入框架</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 </head>
 
@@ -14,21 +14,17 @@
     <div class="notification">
       <div class="columns">
         <div class="column">
-          <input id="titleVal" class="input is-primary" type="text" placeholder="请输入新标题">
-        </div>
-        <div class="column">
-          <a onclick="changeTitle()" class="button is-info">修改标题</a>
+          禁止网页被放入框架
         </div>
       </div>
-
     </div>
   </div>
 
 </body>
 <script>
-  function changeTitle(params) {
-    var title = document.getElementById('titleVal').value;
-    document.title = title;
+  //判断是否为最顶层
+  if (self!=top) {
+    top.location.href=self.location.href;
   }
 </script>
 
