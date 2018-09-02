@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+<style>
+#doing{
+background: #333;
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+z-index: 999;
+color: #fafafa;
+text-align: center;
+padding-top: 20rem;
+}
+</style>
 </head>
+
 <body>
   <div class="container">
     <div class="notification">
       <div class="columns">
+        <div id="doing" style="display:none;">
+          载入中。。。
+        </div>
         <div class="column">
           <a onclick="submit()" class="button is-info">提交表单</a>
         </div>
       </div>
-  
+
     </div>
   </div>
 </body>
 <script>
   function submit() {
-   
+    var doing = document.getElementById('doing');
+    doing.style.display = '';
+    setTimeout(() => {
+self.location.reload();
+    }, 2000);
+    
   }
 </script>
+
 </html>
