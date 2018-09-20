@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1-12收藏本页</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="notification">
+      <div class="columns">
+        <div class="column">
+          <a onclick="addFav()" class="button is-info">加入收藏</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  //设为首页
+  function addFav() {
+    //判断是否为IE浏览器
+    if (window.external.AddFavorite) {
+      //AddFavorite 函数为IE特有的加入收藏夹函数
+      window.external.AddFavorite('./1-12收藏本页.html', '标签名称');
+    } else if (window.sidebar) {
+      //使用sidebar的addPanel函数加入收藏夹
+      window.slidebar.addPanel('标签名称', 'http://www.baidu.com', "");
+    }
+
+  }
+</script>
+
+</html>

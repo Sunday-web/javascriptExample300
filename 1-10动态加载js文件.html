@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1-10动态加载js文件</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="notification">
+      <div class="columns">
+        <div class="column">
+          <a onclick="loadJs()" class="button is-info">动态加载js</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  function loadJs() {
+    //得到html的头部dom
+    var theHead = document.getElementsByTagName('head').item(0);
+
+    //创建脚本的dom对象实例
+    var myScript = document.createElement('script');
+    myScript.src = './my.js' //指定脚本路径
+    myScript.type = 'text/javascript' //指定脚本类型
+    myScript.defer = true //程序下载完后再解析和执行
+
+    //把dom挂在到头部
+    theHead.appendChild(myScript);
+  }
+</script>
+
+</html>
