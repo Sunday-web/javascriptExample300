@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1-14避免浏览器使用缓存加载页面</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="notification">
+      <div class="columns">
+        <div class="column">
+          <a href="#1" class="button is-info">链接1</a>
+          <a href="#2" class="button is-info">链接2</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  //设为首页
+  function myOnload() {
+    //获取所有a标签的DOM
+    var links = document.getElementsByTagName('a');
+    for (var i = 0; i < links.length; i++) {//遍历
+      var link = links[i];//得到当前链接的DOM
+      var href = link.href;//链接的地址
+      if (href.indexOf('?') > -1) {//地址中是否已经包含了参数
+        //修改链接的地址，加上一个参数：当前时间的毫秒数
+        href += '&time' + new Date().getTime();
+      } else {
+        href += '?time' + new Date().getTime();
+      }
+      link.href=href;
+    }
+  }
+  window.onload = myOnload;
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1-15窗口打开时显示大广告图片及其自动关闭</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="notification">
+      <div class="columns">
+        <div class="column has-text-centered">
+          顶部内容
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <div id="ad">
+            <img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3577843278,2910635202&fm=179&app=42&f=JPEG?w=121&h=140"
+              alt="">
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          底部内容
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  function showPic() {
+
+    setTimeout(function () {
+      var ad = document.getElementById('ad');
+      ad.style.display = 'none';
+    }, 5000)
+
+  }
+  window.onload = showPic;
+</script>
+
+</html>
